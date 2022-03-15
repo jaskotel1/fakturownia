@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.text.Font?>
+
+
+<Label alignment="CENTER" layoutY="185.0" prefHeight="30.0" prefWidth="600.0"
+       text="Witamy w programie do tworzenia faktur!" textAlignment="CENTER">
+    <font>
+        <Font size="20.0"/>
+    </font>
+</Label>
+

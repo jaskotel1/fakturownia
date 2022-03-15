@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.fakturownia.modfx.controller.AppInfo">
+    <top>
+        <fx:include fx:id="topMenu" source="../menu/topMenu.fxml" />
+    </top>
+   <center>
+      <Label alignment="CENTER" prefHeight="322.0" prefWidth="600.0" text="O programie" BorderPane.alignment="CENTER" />
+   </center>
+
+</BorderPane>

@@ -1,33 +1,38 @@
 package pl.fakturownia.modfx;
 
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
+import pl.fakturownia.modfx.creator.Page;
+
+import java.io.IOException;
+import java.util.Objects;
 
 public class MainFX extends Application {
 
-    public MainFX() {
-        System.out.println("Constructor");
-    }
+    public MainFX() {}
 
     @Override
-    public void start(Stage stage) {
-        System.out.println("Start");
-        stage.setTitle("Hello FX!");
+    public void start(Stage stage) throws IOException {
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(Page.START_PAGE.getPageAddress())));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.setMaximized(true);
+        stage.setTitle(Page.START_PAGE.getTitle());
         stage.show();
     }
 
     public static void main(String[] args) {
-        System.out.println("Main");
         launch(args);
     }
 
     @Override
     public void init() {
-        System.out.println("Init");
     }
 
     @Override
     public void stop() {
-        System.out.println("Stop");
     }
 }
