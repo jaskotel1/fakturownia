@@ -1,25 +1,23 @@
 package pl.fakturownia.modfx.model;
 
-import javafx.beans.property.SimpleStringProperty;
-
 public class InvoiceItemModel {
 
-    private final SimpleStringProperty id;
-    private final SimpleStringProperty itemName;
-    private final SimpleStringProperty amount;
-    private final SimpleStringProperty jm;
-    private final SimpleStringProperty netPrice;
-    private final SimpleStringProperty discount;
-    private final SimpleStringProperty netPriceDiscount;
-    private final SimpleStringProperty vat;
-    private final SimpleStringProperty amountPrice;
-    private final SimpleStringProperty amountVat;
-    private final SimpleStringProperty grossPrice;
+    private final Long id;
+    private final String itemName;
+    private final Long amount;
+    private final String jm;
+    private final Double netPrice;
+    private final Double discount;
+    private final Double netPriceDiscount;
+    private final Integer vat;
+    private final Double netAmount;
+    private final Double vatAmount;
+    private final Double grossAmount;
+    private static long counter = 0;
 
-    public InvoiceItemModel(SimpleStringProperty id, SimpleStringProperty itemName, SimpleStringProperty amount, SimpleStringProperty jm,
-                            SimpleStringProperty netPrice, SimpleStringProperty discount, SimpleStringProperty netPriceDiscount,
-                            SimpleStringProperty vat, SimpleStringProperty amountPrice, SimpleStringProperty amountVat, SimpleStringProperty grossPrice) {
-        this.id = id;
+    public InvoiceItemModel(String itemName, Long amount, String jm, Double netPrice, Double discount, Double netPriceDiscount, Integer vat,
+                            Double amountPrice, Double amountVat, Double grossAmount) {
+        this.id = ++counter;
         this.itemName = itemName;
         this.amount = amount;
         this.jm = jm;
@@ -27,96 +25,69 @@ public class InvoiceItemModel {
         this.discount = discount;
         this.netPriceDiscount = netPriceDiscount;
         this.vat = vat;
-        this.amountPrice = amountPrice;
-        this.amountVat = amountVat;
-        this.grossPrice = grossPrice;
+        this.netAmount = amountPrice;
+        this.vatAmount = amountVat;
+        this.grossAmount = grossAmount;
     }
 
-    public String getId() {
-        return id.get();
-    }
-
-    public SimpleStringProperty idProperty() {
+    public Long getId() {
         return id;
     }
 
     public String getItemName() {
-        return itemName.get();
-    }
-
-    public SimpleStringProperty itemNameProperty() {
         return itemName;
     }
 
-    public String getAmount() {
-        return amount.get();
-    }
-
-    public SimpleStringProperty amountProperty() {
+    public Long getAmount() {
         return amount;
     }
 
     public String getJm() {
-        return jm.get();
-    }
-
-    public SimpleStringProperty jmProperty() {
         return jm;
     }
 
-    public String getNetPrice() {
-        return netPrice.get();
-    }
-
-    public SimpleStringProperty netPriceProperty() {
+    public Double getNetPrice() {
         return netPrice;
     }
 
-    public String getDiscount() {
-        return discount.get();
-    }
-
-    public SimpleStringProperty discountProperty() {
+    public Double getDiscount() {
         return discount;
     }
 
-    public String getNetPriceDiscount() {
-        return netPriceDiscount.get();
-    }
-
-    public SimpleStringProperty netPriceDiscountProperty() {
+    public Double getNetPriceDiscount() {
         return netPriceDiscount;
     }
 
-    public String getVat() {
-        return vat.get();
-    }
-
-    public SimpleStringProperty vatProperty() {
+    public Integer getVat() {
         return vat;
     }
 
-    public String getAmountPrice() {
-        return amountPrice.get();
+    public Double getNetAmount() {
+        return netAmount;
     }
 
-    public SimpleStringProperty amountPriceProperty() {
-        return amountPrice;
+    public Double getVatAmount() {
+        return vatAmount;
     }
 
-    public String getAmountVat() {
-        return amountVat.get();
+    public Double getGrossAmount() {
+        return grossAmount;
     }
 
-    public SimpleStringProperty amountVatProperty() {
-        return amountVat;
-    }
-
-    public String getGrossPrice() {
-        return grossPrice.get();
-    }
-
-    public SimpleStringProperty grossPriceProperty() {
-        return grossPrice;
+    @Override
+    public String toString() {
+        return "InvoiceItemModel{" +
+                "id=" + id +
+                ", itemName='" + itemName + '\'' +
+                ", amount=" + amount +
+                ", jm='" + jm + '\'' +
+                ", netPrice=" + netPrice +
+                ", discount=" + discount +
+                ", netPriceDiscount=" + netPriceDiscount +
+                ", vat=" + vat +
+                ", amountPrice=" + netAmount +
+                ", amountVat=" + vatAmount +
+                ", grossPrice=" + grossAmount +
+                '}';
     }
 }
